@@ -1,25 +1,29 @@
 body {
     margin: 20px;
-    font-family: poppins;
+    font-family: poppins, sans-serif;
 }
 
 .card {
     padding: 25px;
     display: flex;
-    justify-content: space-around;
-    width: 400px;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
     margin: 0 auto;
     text-align: center;
     background-color: #ffffff;
     color: #2b2839;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
 }
 
 .image-size {
     width: 150px;
     border-radius: 100%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.6s;
 }
 
 .border-blue {
@@ -37,12 +41,10 @@ body {
 
 .card:hover {
     transform: scale(1.05);
-    transition: transform 0.3s ease-in-out;
 }
 
 .card:hover .image-size {
     transform: rotateY(180deg);
-    transition: transform 0.6s;
 }
 
 @keyframes gradientBackground {
@@ -62,25 +64,27 @@ body {
     background-size: 400% 400%;
     animation: gradientBackground 2s ease infinite;
 }
+
+@media (min-width: 769px) {
+    .card {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
 @media (max-width: 768px) {
     .card {
-        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
         padding: 20px;
-    }
-
-    .image-size {
-        width: 100px;
     }
 }
 
 @media (max-width: 480px) {
     .card {
-        flex-direction: column;
-        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
         padding: 15px;
     }
-
-    .image-size {
-        width: 80px;
-    }
 }
+
