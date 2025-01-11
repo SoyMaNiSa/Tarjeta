@@ -62,3 +62,25 @@ body {
     background-size: 400% 400%;
     animation: gradientBackground 2s ease infinite;
 }
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .image-size {
+        width: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        flex-direction: column;
+        width: 100%;
+        padding: 15px;
+    }
+
+    .image-size {
+        width: 80px;
+    }
+}
