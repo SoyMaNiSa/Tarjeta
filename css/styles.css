@@ -1,0 +1,64 @@
+body {
+    margin: 20px;
+    font-family: poppins;
+}
+
+.card {
+    padding: 25px;
+    display: flex;
+    justify-content: space-around;
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #ffffff;
+    color: #2b2839;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.image-size {
+    width: 150px;
+    border-radius: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.border-blue {
+    border: 1px dotted rgb(255, 255, 255);
+}
+
+.text {
+    text-align: left;
+}
+
+.card:hover .text {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover .image-size {
+    transform: rotateY(180deg);
+    transition: transform 0.6s;
+}
+
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.card:hover {
+    background: linear-gradient(270deg, #ff7e5f, #feb47b, #86a8e7, #91eae4, #f3a683, #f7d794, #778beb, #e77f67);
+    background-size: 400% 400%;
+    animation: gradientBackground 2s ease infinite;
+}
